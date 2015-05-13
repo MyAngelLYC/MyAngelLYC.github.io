@@ -1,0 +1,8 @@
+<BookList>
+	<Book>
+		<title>Head First 软件开发</title>
+		<author>Dan Pilone & Russ Miles</author>
+		<image>http://img3.douban.com/lpic/s11309075.jpg</image>
+		<intro>本书主要介绍了软件开发的相关知识。</intro>
+	</Book>
+</BookList>
