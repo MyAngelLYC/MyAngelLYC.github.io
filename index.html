@@ -9,9 +9,9 @@
 <body>
 <?php
 	$xmlDoc = new DOMDocument();
-	$xmlDoc->load("BookList.xml");
-	$bookList = $xmlDoc->getElementsByTagName("Book");
-	echo $bookList[0]->getAttributes("title");
+	$xmlDoc.load("BookList.xml");
+	$bookList = $xmlDoc.getElementsByTagName("Book");
+	echo $bookList[0].getAttributes("title");
 ?>	
 </body>
 </html>
