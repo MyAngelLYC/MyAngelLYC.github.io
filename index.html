@@ -8,14 +8,7 @@
 
 <body>
 <?php
-	$xmlDoc = new DOMDocument();
-	$xmlDoc.load('BookList.xml');
-	$bookList = $xmlDoc.getElementsByTagName('Book');
-	foreach($bookList as $book)
-	{
-		$title = $book.getElementsByTagName('title').item(0).nodeValue;
-		echo $title;
-	}
+	phpinfo();
 ?>	
 </body>
 </html>
