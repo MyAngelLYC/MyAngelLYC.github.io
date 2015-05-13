@@ -1,22 +1,45 @@
 <!doctype HTML>
 <html>
 <head>
+
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
 <title>eathenliu读书</title>
-<script>
-	var xmlFileName="BookList.xml";
-	var xmlDoc=document.implementation.createDocument("","",null);
-	xmlDoc.load(xmlFileName);
 
-	var nodeList=xmlDoc.getElementsByTagName("Book");
-	document.write(nodeList);
+<script>
+	var loadXML = function (xmlFile){
+		var xmlDoc;
+		if(window.ActiveXObject) {
+			xmlDoc = new ActiveXObject('Microsoft.XMLDOM');//IE浏览器
+			xmlDoc.async = false;
+			xmlDoc.load(xmlFile);
+		}
+		else if(isFirefox=navigator.userAgent.indexOf("Firefox")>0) { //火狐浏览器
+			xmlDoc = document.implementation.createDocument('', '', null);
+			xmlDoc.load(xmlFile);
+		}
+		else{ //谷歌浏览器
+			var xmlhttp = new window.XMLHttpRequest();
+			xmlhttp.open("GET",xmlFile,false);
+			xmlhttp.send(null);
+			if(xmlhttp.readyState == 4){
+				xmlDoc = xmlhttp.responseXML.documentElement;
+			} 
+		}
+        return xmlDoc;	            
+	}
+
+	function showBooks(){	
+		var xmlFileName = "BookList.xml";	
+		var xmlDoc = loadXML(xmlFileName);
+
+		// var nodeList=xmlDoc.getElementsByTagName("Book");
+		document.getElementById("content").innerHTML="Hi";
+	}	
 </script>
 </head>
 
-<body>
-	<div id="content"></div>
+<body onload="showBooks()">
+	<div id="content"></div>	
 </body>
-
-
 </html>
