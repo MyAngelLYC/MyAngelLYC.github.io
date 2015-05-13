@@ -10,10 +10,10 @@
 <?php
 	$xmlDoc = new DOMDocument();
 	$xmlDoc.load('BookList.xml');
-	$bookList = $xmlDoc->getElementsByTagName('Book');
+	$bookList = $xmlDoc.getElementsByTagName('Book');
 	foreach($bookList as $book)
 	{
-		$title = $book->getElementsByTagName('title')->item(0)->nodeValue;
+		$title = $book.getElementsByTagName('title').item(0).nodeValue;
 		echo $title;
 	}
 ?>	
