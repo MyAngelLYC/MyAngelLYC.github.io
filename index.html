@@ -4,18 +4,19 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
 <title>eathenliu读书</title>
-</head>
-
-<body>
-	<div id="content"></div>
-</body>
-
 <script>
 	var xmlFileName="BookList.xml";
 	var xmlDoc=document.implementation.createDocument("","",null);
 	xmlDoc.load(xmlFileName);
 
 	var nodeList=xmlDoc.getElementsByTagName("Book");
-	document.getElementById("content").innerHTML=nodeList;
+	document.write(nodeList);
 </script>
+</head>
+
+<body>
+	<div id="content"></div>
+</body>
+
+
 </html>
